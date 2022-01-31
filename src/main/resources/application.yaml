@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:h2:./gitdb
+    username: user1
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+            
+springdoc:
+  api-docs:
+    path: /swagger-ui/api-docs.html
