@@ -151,6 +151,12 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
 		return orderRepository.findByOrderDateGreaterThanEqualAndOrderDateLessThanEqual(fromDate, toDate);
 	}
 
+	@Override
+	public Order findById(Long orderId) throws BusinessException {
+		// TODO Auto-generated method stub
+		return  orderRepository.findById(orderId).orElseThrow(()->new BusinessException(ExceptionCodes.NOT_FOUND_CODE, ExceptionCodes.NOT_FOUND_MESSAGE,"Order"));
+	}
+
 	
 	
 }

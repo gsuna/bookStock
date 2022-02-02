@@ -6,6 +6,7 @@ import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gsuna.project.entity.OrderDetail;
@@ -19,7 +20,7 @@ public class OrderDetailController extends BaseController {
 	private OrderDetailService orderDetailService;
 	
 	@GetMapping("/orderDetails/{orderId}")
-	public List<OrderDetail> createOrder(@PathParam("orderId") Long orderId) throws Exception {
+	public List<OrderDetail> createOrder(@PathVariable("orderId") Long orderId) throws Exception {
 		return orderDetailService.getOrderDetails(orderId);
 	}
 	
